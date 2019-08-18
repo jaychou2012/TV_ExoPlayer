@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_list"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/bg_tv_list_selector"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:gravity="center"
+    android:nextFocusUp="@id/ll_list"
+    android:nextFocusDown="@id/ll_list"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <View
+        android:id="@+id/v_select"
+        android:layout_width="15dp"
+        android:layout_height="10dp"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_list_blue"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tv_tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="123456789123456789"
+        android:textColor="@color/white"
+        android:textSize="26sp" />
+</LinearLayout>

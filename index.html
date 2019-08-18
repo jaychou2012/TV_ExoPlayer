@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>ws</title>
+    <style type="text/css">
+
+    </style>
+    <script type="text/javascript">
+
+        var onOpen = function () {
+            console.log("Socket opened.");
+            socket.send("Hi, Server!");
+        },
+            onClose = function () {
+                console.log("Socket closed.");
+            },
+            onMessage = function (data) {
+                console.log("We get signal:");
+                console.log(data);
+            },
+            onError = function () {
+                console.log("We got an error.");
+            },
+
+            socket = new WebSocket("ws://192.168.1.123:8887/");
+        socket.onopen = onOpen;
+        socket.onclose = onClose;
+        socket.onerror = onError;
+        socket.onmessage = onMessage;
+
+		function sendMessage(){
+			socket.send("Hi, Server,I send Message!");
+		}
+		function left(){
+			socket.send("left");
+		}
+		function right(){
+			socket.send("right");
+		}
+		function up(){
+			socket.send("up");
+		}
+		function down(){
+			socket.send("down");
+		}
+		function enter(){
+			socket.send("enter");
+		}
+		function back(){
+			socket.send("back");
+		}
+    </script>
+</head>
+
+<body>
+    <div id="connected">
+    <button onclick="sendMessage()">连接</button>
+    </div>
+    <div id="left"><button onclick="left()">Left</button></div>
+    <div id="right"><button onclick="right()">Right</button></div>
+    <div id="up"><button onclick="up()">Up</button></div>
+    <div id="down"><button onclick="down()">Down</button></div>
+    <div id="enter"><button onclick="enter()">Enter</button></div>
+    <div id="back"><button onclick="back()">Back</button></div>
+</body>
+
+</html>
