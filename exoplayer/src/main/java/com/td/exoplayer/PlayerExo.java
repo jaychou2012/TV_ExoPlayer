@@ -502,10 +502,12 @@ public class PlayerExo implements PlaybackPreparer, SettingIml, AdsView.AdsState
     private Runnable runnable = new Runnable() {
         @Override
         public void run() {
-            if (player.getContentPosition() >= freeTime) {
-                handler.obtainMessage(-1).sendToTarget();
-            } else {
-                handler.postDelayed(this, 1000);
+            if(player!=null){
+                if (player.getContentPosition() >= freeTime) {
+                    handler.obtainMessage(-1).sendToTarget();
+                } else {
+                    handler.postDelayed(this, 1000);
+                }
             }
         }
     };
